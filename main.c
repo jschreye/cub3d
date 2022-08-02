@@ -12,7 +12,7 @@
 
 #include "cub3d.h"
 
-int	ft_check_key(int keycode, void *img, void *ptr, int x, int y)
+/*int	ft_check_key(int keycode, void *img, void *ptr, int x, int y)
 {
     
 	if (keycode == 53)
@@ -26,7 +26,7 @@ int	ft_check_key(int keycode, void *img, void *ptr, int x, int y)
 	if (keycode == 0 || keycode == 123)
 		mlx_pixel_put(img, ptr, x, y += 5, 0xff00ff);
 	return (0);
-}
+}*/
 
 int main(void)
 {

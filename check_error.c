@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <stdio.h>
-# include "mlx/mlx.h"
-# include <stdlib.h>
+#include <stdio.h>
+#include "mlx/mlx.h"
+#include <stdlib.h>
 
 int ft_check_space_with_nbr_one()
 {
