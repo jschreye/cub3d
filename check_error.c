@@ -14,8 +14,16 @@
 #include "mlx/mlx.h"
 #include <stdlib.h>
 
-int ft_check_space_with_nbr_one()
+void	ft_check_map_cub(char *argv)
 {
+	int	size;
 
+	size = ft_strlen(argv);
+	if (argv[size - 1] != 'b' || argv[size - 2] != 'u' || argv[size - 3] != 'c'
+		|| argv[size - 4] != '.')
+	{
+		write (1, "Error\n IS NOT A .BER", 20);
+		exit(0);
+	}
 }
 

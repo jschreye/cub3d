@@ -28,17 +28,31 @@
 	return (0);
 }*/
 
-int main(void)
+int	ft_close(void)
+{
+	exit(0);
+}
+
+
+int main(int argc, char **argv)
 {
     void *img;
     void *ptr;
+	int fd;
     int x = 500;
     int y = 500;
-    
+	if (argc <= 1)
+		exit(0);
+	fd = open(argv[1], O_RDONLY);
     img = mlx_init();
-    ptr = mlx_new_window(img, 1000, 1000, "bouille");
-    mlx_pixel_put(img, ptr, x, y, 0xff00ff);
-    mlx_key_hook(ptr, ft_check_key, ptr);
+    ptr = mlx_new_window(img, 1000, 1000, "super super");
+	while (x > 1 && y < 1000)
+	{
+    	mlx_pixel_put(img, ptr, x, y, 0xff00ff);
+		x--;
+		y++;
+	}
+    mlx_key_hook(ptr, ptr, ptr);
     mlx_loop(img);
     return (0);
 }
