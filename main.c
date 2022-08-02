@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "mlx/mlx.h"
-#include <stdlib.h>
+#include "cub3d.h"
 
 int	ft_check_key(int keycode, void *img, void *ptr, int x, int y)
 {
@@ -30,15 +28,13 @@ int	ft_check_key(int keycode, void *img, void *ptr, int x, int y)
 	return (0);
 }
 
-int main(int argc, char **argv)
+int main(void)
 {
     void *img;
     void *ptr;
     int x = 500;
     int y = 500;
     
-    argc = 0;
-    argv = 0;
     img = mlx_init();
     ptr = mlx_new_window(img, 1000, 1000, "bouille");
     mlx_pixel_put(img, ptr, x, y, 0xff00ff);
