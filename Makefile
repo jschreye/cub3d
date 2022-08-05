@@ -16,6 +16,16 @@ MLX_DIR = ./mlx
 MLX = $(MLX_DIR)/libmlx.a
 
 SRCS =  main.c \
+		check_cub.c \
+		get_next_line_utils.c \
+		get_next_line.c \
+		init_struct.c \
+		check_error.c \
+		check_cub_bis.c \
+		check_cub_bis_bis.c \
+		check_map.c \
+		check_map_bis.c \
+
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
 

@@ -10,12 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include "mlx/mlx.h"
-#include <stdlib.h>
+#include "cub3d.h"
 
-int ft_check_space_with_nbr_one()
+void ft_print_error_cub(char **tab)
 {
+    if (tab)
+        ft_free_tab(tab);
+    printf("error: file .cub is not correct\n");
+    exit (0);
+}
 
+void ft_print_error_map(char **tab)
+{
+    if (tab)
+        ft_free_tab(tab);
+    printf("error: map is not correct\n");
+    exit (0);
 }
 

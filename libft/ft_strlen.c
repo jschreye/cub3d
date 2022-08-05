@@ -16,10 +16,7 @@ size_t	ft_strlen(const char *str)
 	int	count;
 
 	count = 0;
-	while (*str != 0)
-	{
-		str++;
+	while (str[count])
 		count++;
-	}
 	return (count);
 }
