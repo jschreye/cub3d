@@ -39,11 +39,21 @@ typedef struct s_count
     int c;
 } t_count;
 
+typedef struct s_img
+{
+    int loc_p_i;
+    int loc_p_y;
+    int coor_x;
+    int coor_y;
+    void *img;
+} t_img;
+
 typedef struct s_data
 {
     int     fd;
     int     *floor;
     int     *roof;
+    int     keycode_value;
     void    *mlx;
     void    *mlx_win;
     char    *no_texture;
@@ -73,5 +83,7 @@ void ft_check_p(t_data *data);
 void    ft_check_char_map(t_data *data);
 int ft_count_tab(char **tab);
 void ft_check_border(t_data *data);
+void ft_init_struct_img(t_img *img);
+void ft_print_map(t_data *data, t_img *img);
 
 #endif

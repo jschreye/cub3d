@@ -8,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This program built for i386-apple-darwin11.3.0
  
 
-# Make data base, printed on Fri Aug  5 10:32:09 2022
+# Make data base, printed on Fri Aug  5 11:36:30 2022
 
 # Variables
 
@@ -86,12 +86,10 @@ VSCODE_CODE_CACHE_PATH = /Users/gaelrubin/Library/Application Support/Code/Cache
 # environment
 LOGNAME = gaelrubin
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 VSCODE_HANDLES_UNCAUGHT_ERRORS = true
- 
 # automatic
- 
 ^D = $(patsubst %/,%,$(dir $^))
 # environment
 XPC_FLAGS = 0x0
@@ -99,8 +97,9 @@ XPC_FLAGS = 0x0
 MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
+ 
 # makefile (from `Makefile', line 18)
-SRCS = main.c check_cub.c get_next_line_utils.c get_next_line.c init_struct.c check_error.c check_cub_bis.c check_cub_bis_bis.c check_map.c check_map_bis.c 
+SRCS = main.c check_cub.c get_next_line_utils.c get_next_line.c init_struct.c check_error.c check_cub_bis.c check_cub_bis_bis.c check_map.c check_map_bis.c test_print_map.c 
 # environment
 SHLVL = 3
 # makefile (from `Makefile', line 14)
@@ -142,7 +141,7 @@ MFLAGS = -Rrqp
 # environment
 TERM_PROGRAM_VERSION = 445
 # environment
-XPC_SERVICE_NAME = application.com.microsoft.VSCode.3649106.3649112.A91B9869-8810-4352-ADA4-EE110E226772
+XPC_SERVICE_NAME = application.com.microsoft.VSCode.3649106.3649112.A946CD10-F439-41D1-9F56-EF5226E6C440
 # makefile (from `Makefile', line 11)
 OBJS_DIR = ./objs
 # automatic
@@ -184,11 +183,12 @@ VSCODE_PID = 711
 
 # Directories
 
-# . (device 16777234, inode 3643177): 23 files, no impossibilities.
+# . (device 16777234, inode 3643177): 25 files, no impossibilities.
 # ./src: could not be stat'd.
 
-# 23 files, no impossibilities in 2 directories.
+# 25 files, no impossibilities in 2 directories.
 
+ 
 # Implicit Rules
 
 objs/%.o: %.c | ./objs
@@ -201,10 +201,9 @@ objs/%.o: %.c | ./objs
 # Files
 
 objs/check_cub_bis.o: check_cub_bis.c | objs
- 
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `check_cub_bis'
-#  Last modified 2022-08-05 10:29:39
+#  Last modified 2022-08-05 11:31:02
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -213,16 +212,22 @@ objs/check_cub_bis.o: check_cub_bis.c | objs
 	$(CC) $(CFLAGS) $(INC_DIRS) -o $@ -c $^
 	
 
-# Not a target:
-objs/check_map_bis.o:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+objs/check_map_bis.o: check_map_bis.c | objs
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `check_map_bis'
+#  Last modified 2022-08-05 11:31:02
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 53):
+	$(CC) $(CFLAGS) $(INC_DIRS) -o $@ -c $^
+	
 
 objs/get_next_line.o: get_next_line.c | objs
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `get_next_line'
-#  Last modified 2022-08-05 10:29:38
+#  Last modified 2022-08-05 11:31:02
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -234,7 +239,7 @@ objs/get_next_line.o: get_next_line.c | objs
 objs/main.o: main.c | objs
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `main'
-#  Last modified 2022-08-05 10:29:38
+#  Last modified 2022-08-05 11:31:01
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -256,7 +261,7 @@ all: cub3D
 # Not a target:
 init_struct.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-04 12:01:14
+#  Last modified 2022-08-05 11:29:39
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -270,15 +275,15 @@ init_struct.c:
 # Not a target:
 main.c:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-05 09:13:36
+#  Last modified 2022-08-05 11:30:12
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-cub3D: libft/libft.a objs/main.o objs/check_cub.o objs/get_next_line_utils.o objs/get_next_line.o objs/init_struct.o objs/check_error.o objs/check_cub_bis.o objs/check_cub_bis_bis.o objs/check_map.o objs/check_map_bis.o mlx/libmlx.a
+cub3D: libft/libft.a objs/main.o objs/check_cub.o objs/get_next_line_utils.o objs/get_next_line.o objs/init_struct.o objs/check_error.o objs/check_cub_bis.o objs/check_cub_bis_bis.o objs/check_map.o objs/check_map_bis.o objs/test_print_map.o mlx/libmlx.a
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-05 10:29:40
+#  Last modified 2022-08-05 11:35:08
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # variable set hash-table stats:
@@ -290,7 +295,7 @@ cub3D: libft/libft.a objs/main.o objs/check_cub.o objs/get_next_line_utils.o obj
 objs/check_cub_bis_bis.o: check_cub_bis_bis.c | objs
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `check_cub_bis_bis'
-#  Last modified 2022-08-05 10:29:39
+#  Last modified 2022-08-05 11:31:02
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -298,6 +303,15 @@ objs/check_cub_bis_bis.o: check_cub_bis_bis.c | objs
 #  commands to execute (from `Makefile', line 53):
 	$(CC) $(CFLAGS) $(INC_DIRS) -o $@ -c $^
 	
+
+# Not a target:
+test_print_map.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-05 11:35:52
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 # Not a target:
 get_next_line.c:
@@ -317,13 +331,14 @@ get_next_line.c:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-08-05 10:32:05
+#  Last modified 2022-08-05 11:16:14
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-debug: libft/libft.a objs/main.o objs/check_cub.o objs/get_next_line_utils.o objs/get_next_line.o objs/init_struct.o objs/check_error.o objs/check_cub_bis.o objs/check_cub_bis_bis.o objs/check_map.o objs/check_map_bis.o cub3D
+ 
+debug: libft/libft.a objs/main.o objs/check_cub.o objs/get_next_line_utils.o objs/get_next_line.o objs/init_struct.o objs/check_error.o objs/check_cub_bis.o objs/check_cub_bis_bis.o objs/check_map.o objs/check_map_bis.o objs/test_print_map.o cub3D
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
@@ -337,7 +352,7 @@ debug: libft/libft.a objs/main.o objs/check_cub.o objs/get_next_line_utils.o obj
 
 objs:
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-05 10:29:39
+#  Last modified 2022-08-05 11:35:06
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 50):
@@ -346,7 +361,7 @@ objs:
 
 libft/libft.a:
 #  Implicit rule search has not been done.
-#  Last modified 2022-08-05 10:29:38
+#  Last modified 2022-08-05 11:26:48
 #  File has been updated.
 #  Successfully updated.
 #  commands to execute (from `Makefile', line 44):
@@ -375,12 +390,11 @@ check_error.c:
 objs/init_struct.o: init_struct.c | objs
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `init_struct'
-#  Last modified 2022-08-05 10:29:38
+#  Last modified 2022-08-05 11:31:02
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
- 
 #  commands to execute (from `Makefile', line 53):
 	$(CC) $(CFLAGS) $(INC_DIRS) -o $@ -c $^
 	
@@ -437,7 +451,7 @@ clean:
 objs/get_next_line_utils.o: get_next_line_utils.c | objs
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `get_next_line_utils'
-#  Last modified 2022-08-05 10:29:38
+#  Last modified 2022-08-05 11:31:02
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -455,10 +469,19 @@ check_cub_bis.c:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
+# Not a target:
+check_map_bis.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-05 10:31:31
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+
 objs/check_error.o: check_error.c | objs
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `check_error'
-#  Last modified 2022-08-05 10:29:39
+#  Last modified 2022-08-05 11:31:02
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -470,7 +493,7 @@ objs/check_error.o: check_error.c | objs
 objs/check_cub.o: check_cub.c | objs
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `check_cub'
-#  Last modified 2022-08-05 10:29:38
+#  Last modified 2022-08-05 11:31:01
 #  File has been updated.
 #  Successfully updated.
 # variable set hash-table stats:
@@ -482,25 +505,38 @@ objs/check_cub.o: check_cub.c | objs
 objs/check_map.o: check_map.c | objs
 #  Implicit rule search has been done.
 #  Implicit/static pattern stem: `check_map'
-#  Last modified 2022-08-05 10:29:39
+ 
+#  Last modified 2022-08-05 11:31:02
+#  File has been updated.
+#  Successfully updated.
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
+#  commands to execute (from `Makefile', line 53):
+	$(CC) $(CFLAGS) $(INC_DIRS) -o $@ -c $^
+	
+
+objs/test_print_map.o: test_print_map.c | objs
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: `test_print_map'
+#  Last modified 2022-08-05 11:35:06
 #  File has been updated.
 #  Needs to be updated (-q is set).
 # automatic
-# @ := objs/check_map.o
+# @ := objs/test_print_map.o
 # automatic
 # % := 
 # automatic
-# * := check_map
+# * := test_print_map
 # automatic
-# + := check_map.c
+# + := test_print_map.c
 # automatic
 # | := objs
 # automatic
-# < := check_map.c
+# < := test_print_map.c
 # automatic
-# ^ := check_map.c
+# ^ := test_print_map.c
 # automatic
-# ? := check_map.c
+# ? := test_print_map.c
 # variable set hash-table stats:
 # Load=8/32=25%, Rehash=0, Collisions=3/16=19%
 #  commands to execute (from `Makefile', line 53):
@@ -525,18 +561,17 @@ check_cub_bis_bis.c:
 # variable set hash-table stats:
 # Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
-valgrind: libft/libft.a objs/main.o objs/check_cub.o objs/get_next_line_utils.o objs/get_next_line.o objs/init_struct.o objs/check_error.o objs/check_cub_bis.o objs/check_cub_bis_bis.o objs/check_map.o objs/check_map_bis.o cub3D
+valgrind: libft/libft.a objs/main.o objs/check_cub.o objs/get_next_line_utils.o objs/get_next_line.o objs/init_struct.o objs/check_error.o objs/check_cub_bis.o objs/check_cub_bis_bis.o objs/check_map.o objs/check_map_bis.o objs/test_print_map.o cub3D
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 # makefile (from `Makefile', line 59)
- 
 # CFLAGS += -g3
 # variable set hash-table stats:
 # Load=1/32=3%, Rehash=0, Collisions=0/2=0%
 
 # files hash-table stats:
-# Load=33/1024=3%, Rehash=0, Collisions=0/141=0%
+# Load=36/1024=4%, Rehash=0, Collisions=0/157=0%
 # VPATH Search Paths
 
 # No `vpath' search paths.
@@ -548,6 +583,6 @@ valgrind: libft/libft.a objs/main.o objs/check_cub.o objs/get_next_line_utils.o 
 # strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
 # strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
 
-# Finished Make data base on Fri Aug  5 10:32:09 2022
+# Finished Make data base on Fri Aug  5 11:36:30 2022
 
  

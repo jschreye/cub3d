@@ -1,7 +1,7 @@
-                  NO./img/texture_nord1.xpm                                                      
+                  NO./img/ground.xpm                                               
 
-SO./tex     ture_s    ud
-WE./texture_                ouest               
+SO./img/wall.xpm
+WE./img/player_up.xpm            
                           EA./textur
 F220,100,1
 C225,30,1
