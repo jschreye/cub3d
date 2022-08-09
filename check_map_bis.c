@@ -14,6 +14,8 @@ void ft_check_p(t_data *data)
             if (data->tab_map[i][j] == 'N' || data->tab_map[i][j] == 'S'
                 || data->tab_map[i][j] == 'W' || data->tab_map[i][j] == 'E')
             {
+                data->img.posx = i;
+                data->img.posy = j;
                 if ((data->tab_map[i - 1][j] == ' ' && data->tab_map[i - 1][j])
                     || (data->tab_map[i + 1][j] == ' ' && data->tab_map[i + 1][j])
                     || (data->tab_map[i][j - 1] == ' ' && data->tab_map[i][j - 1]) 

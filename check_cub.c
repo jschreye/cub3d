@@ -98,6 +98,7 @@ void    ft_check_cub(t_data *data)
     char    *tmp;
     char    **tab;
 
+    
     str_full_cub = ft_strdup("");//free
     while (1)
     {

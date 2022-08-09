@@ -41,10 +41,21 @@ typedef struct s_count
 
 typedef struct s_img
 {
-    int loc_p_i;
-    int loc_p_y;
-    int coor_x;
-    int coor_y;
+    int screenw;
+    int screenh;
+    int coorx;//pour test (a effacer)
+    int coory;//pour test (a effacer)
+    double mapw;
+    double maph;
+    double posx;
+    double posy;
+    double dirx;
+    double diry;
+    double planex;
+    double planey;
+    double camerax;
+    double raydirx;
+    double raydiry;
     void *img;
 } t_img;
 
@@ -54,6 +65,9 @@ typedef struct s_data
     int     *floor;
     int     *roof;
     int     keycode_value;
+    int     cy;
+    int     cx;
+    int     c;
     void    *mlx;
     void    *mlx_win;
     char    *no_texture;
@@ -61,6 +75,7 @@ typedef struct s_data
     char    *we_texture;
     char    *ea_texture;
     char    **tab_map;
+    t_img   img;
 }   t_data;
 
 void    ft_check_cub(t_data *data);
@@ -83,7 +98,9 @@ void ft_check_p(t_data *data);
 void    ft_check_char_map(t_data *data);
 int ft_count_tab(char **tab);
 void ft_check_border(t_data *data);
-void ft_init_struct_img(t_img *img);
-void ft_print_map(t_data *data, t_img *img);
+void ft_init_struct_img(t_data *data);
+void    ft_check_map_cub(char *argv);
+void ft_print_map(t_data *data);//test a effacer
+int    ft_check_key(int keycode, t_data *data); //test a effacer
 
 #endif

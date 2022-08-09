@@ -28,3 +28,15 @@ void ft_print_error_map(char **tab)
     exit (0);
 }
 
+void    ft_check_map_cub(char *argv)
+{
+    int    size;
+
+    size = ft_strlen(argv);
+    if (argv[size - 1] != 'b' || argv[size - 2] != 'u' || argv[size - 3] != 'c'
+        || argv[size - 4] != '.')
+    {
+        write (1, "Error\n IS NOT A .CUB", 20);
+        exit(0);
+    }
+}
