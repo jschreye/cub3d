@@ -14,6 +14,7 @@ void ft_check_p(t_data *data)
             if (data->pars.map[i][j] == 'N' || data->pars.map[i][j] == 'S'
                 || data->pars.map[i][j] == 'W' || data->pars.map[i][j] == 'E')
             {
+                data->pars.player = data->pars.map[i][j];
                 data->pars.pl_x = i;
                 data->pars.pl_y = j;
                 if ((data->pars.map[i - 1][j] == ' ' && data->pars.map[i - 1][j])
@@ -79,4 +80,25 @@ void ft_check_border(t_data *data)
             ft_print_error_map(data->pars.map);
         i++;
     }
+}
+
+void ft_check_size_map(t_data *data)
+{
+    int i;
+    int j;
+    int tmp;
+
+    i = 0;
+    tmp = 0;
+    while (data->pars.map[i])
+    {
+        j = 0;
+        while (data->pars.map[i][j])
+            j++;
+        if (j > tmp)
+            tmp = j;
+        i++;
+        data->pars.map_h++;
+    }
+    data->pars.map_w = tmp;
 }

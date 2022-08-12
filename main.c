@@ -57,6 +57,7 @@ int main(int argc, char **argv)
 	ft_init_struct_win(&data);
 	ft_init_world(&data);
 	ft_init_texture(&data);
+	ft_init_map(&data);
 	ft_get_image(&data, '1');
 	mlx_hook(data.win.mlx_win, 17, 1L<<0, ft_close, &data);
     mlx_loop(data.win.mlx);

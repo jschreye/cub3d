@@ -95,4 +95,5 @@ void ft_check_map(t_data *data)
     ft_check_border_bis(data);
     ft_check_zero(data);
     ft_check_p(data);
+    ft_check_size_map(data);
 }

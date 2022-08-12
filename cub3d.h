@@ -11,6 +11,24 @@
 # include <math.h>
 # include <CoreGraphics/CGDisplayConfiguration.h>
 
+typedef struct s_map
+{
+    int map_size;
+    int w;
+    int h;
+    int h_offset;
+    int w_offset;
+    float pos_x;
+    float pos_y;
+    float prev_x;
+    float prev_y;
+    float a_rad;
+    int a_deg;
+    float delta_x;
+    float delta_y;
+
+}   t_map;
+
 typedef struct s_img
 {
     void *img;
@@ -75,8 +93,9 @@ typedef struct s_parsing
     int     *roof;
     int     pl_x;
     int     pl_y;
-    int     map_h; //pas enregister
-    int     map_w; //pas enregister  
+    int     map_h;
+    int     map_w;
+    char    player;
     char    *no_texture;
     char    *so_texture;
     char    *we_texture;
@@ -106,6 +125,7 @@ typedef struct s_data
     t_key key;
     t_image world;
     t_ray ray;
+    t_map map;
 }   t_data;
 
  // initialisation
@@ -116,6 +136,7 @@ void ft_init_struct_win(t_data *data);
 void ft_init_struct_key(t_data *data);
 void ft_init_world(t_data *data);
 void ft_init_texture(t_data *data);
+void ft_init_map(t_data *data);
 
 // print error
 void    ft_print_error_cub(char **tab);
@@ -135,6 +156,7 @@ void    ft_check_map(t_data *data);
 void    ft_check_char_map(t_data *data);
 void ft_check_border(t_data *data);
 void ft_check_p(t_data *data);
+void ft_check_size_map(t_data *data);
 
 //utils
 void ft_free_tab(char **tab);
