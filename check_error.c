@@ -40,3 +40,11 @@ void    ft_check_map_cub(char *argv)
         exit(0);
     }
 }
+
+void ft_print_error_texture(char **tab)
+{
+    if (tab)
+        ft_free_tab(tab);
+    printf("error: texture is not correct\n");
+    exit (0);   
+}

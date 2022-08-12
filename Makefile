@@ -25,6 +25,9 @@ SRCS =  main.c \
 		check_cub_bis_bis.c \
 		check_map.c \
 		check_map_bis.c \
+		init_world.c \
+		init_texture.c \
+		get_image.c \
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
 

@@ -50,10 +50,14 @@ int main(int argc, char **argv)
 		exit (0);
 	ft_check_map_cub(argv[1]);
 	ft_init_struct_pars(&data);
+	ft_init_struct_key(&data);
 	data.pars.fd = open(argv[1], O_RDONLY);	
 	ft_check_cub(&data);
 	close(data.pars.fd);
-		
+	ft_init_struct_win(&data);
+	ft_init_world(&data);
+	ft_init_texture(&data);
+	ft_get_image(&data, '1');
 	mlx_hook(data.win.mlx_win, 17, 1L<<0, ft_close, &data);
     mlx_loop(data.win.mlx);
 	//while (1)

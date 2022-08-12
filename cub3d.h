@@ -9,6 +9,46 @@
 # include "libft/libft.h"
 # include <fcntl.h>
 # include <math.h>
+# include <CoreGraphics/CGDisplayConfiguration.h>
+
+typedef struct s_img
+{
+    void *img;
+    char *addr;
+    char *path;
+    int width;
+    int heigth;
+    int bpp;
+    int ll;
+    int e;
+} t_img;
+
+typedef struct s_ray
+{
+    t_img tx_n;
+    t_img tx_w;
+    t_img tx_e;
+    t_img tx_s;    
+} t_ray;
+
+typedef struct s_image
+{
+    void *image;
+    char *addr;
+    int bits_per_pixel;
+    int line_length;
+    int endian;
+} t_image;
+
+typedef struct s_key
+{
+    int w;
+    int s;
+    int a;
+    int d;
+    int left;
+    int right;
+}   t_key;
 
 typedef struct s_truc
 {
@@ -48,23 +88,40 @@ typedef struct s_window
 {
     void    *mlx;
     void    *mlx_win;
+	CGDirectDisplayID	display;
+	int					win_w;
+	int					win_h;
+	int					margin_w;
+	int					margin_h;
+	int					width;
+	int					heigth;
+	int					world_h;   
+
 }   t_window;
 
 typedef struct s_data
 {
     t_window win;
     t_parsing pars;
+    t_key key;
+    t_image world;
+    t_ray ray;
 }   t_data;
 
  // initialisation
 void    ft_init_struct_pars(t_data *data);
 void    ft_init_struct_truc(t_truc *t);
 void ft_init_struct_count(t_count *count);
+void ft_init_struct_win(t_data *data);
+void ft_init_struct_key(t_data *data);
+void ft_init_world(t_data *data);
+void ft_init_texture(t_data *data);
 
 // print error
 void    ft_print_error_cub(char **tab);
 void ft_print_error_map(char **tab);
 void    ft_check_map_cub(char *argv);
+void ft_print_error_texture(char **tab);
 
 // parsing_cub
 void    ft_check_cub(t_data *data);
@@ -83,5 +140,8 @@ void ft_check_p(t_data *data);
 void ft_free_tab(char **tab);
 void ft_print_tab(char **tab);
 int ft_close();
+
+//raycasting
+void ft_get_image(t_data *data, char c);
 
 #endif
