@@ -26,15 +26,15 @@ void    ft_parsing_map(t_data *data, char **tab, int i)
     size = 0;
     while (tab[size])
         size++;
-    data->tab_map = ft_calloc(size, sizeof(char*));//PAS FREE
+    data->pars.map = ft_calloc(size, sizeof(char*));//PAS FREE
     while (tab[i])
     {
-        data->tab_map[j] = ft_calloc(ft_strlen(tab[i]) + 1, sizeof(char));//PAS FREE
-        ft_strcpy(data->tab_map[j], tab[i]);
+        data->pars.map[j] = ft_calloc(ft_strlen(tab[i]) + 1, sizeof(char));//PAS FREE
+        ft_strcpy(data->pars.map[j], tab[i]);
         i++;
         j++;
     }
-    data->tab_map[j] = NULL;
+    data->pars.map[j] = NULL;
     ft_free_tab(tab);
 }
 
@@ -42,7 +42,7 @@ void    ft_delete_space(char **tab)
 {
     t_truc t;
 
-    t.i = 0;
+    ft_init_struct_truc(&t);
     while (tab[t.i])
     {
         t.tmp = ft_calloc(ft_strlen(tab[t.i]) + 1, sizeof(char));
@@ -98,12 +98,11 @@ void    ft_check_cub(t_data *data)
     char    *tmp;
     char    **tab;
 
-    
     str_full_cub = ft_strdup("");//free
     while (1)
     {
         tmp = str_full_cub;
-        str = get_next_line(data->fd);
+        str = get_next_line(data->pars.fd);
         if (str != NULL)
             str_full_cub = ft_join(str_full_cub, str);
         if (str == NULL)

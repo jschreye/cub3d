@@ -25,7 +25,6 @@ SRCS =  main.c \
 		check_cub_bis_bis.c \
 		check_map.c \
 		check_map_bis.c \
-		test_print_map.c \
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
 

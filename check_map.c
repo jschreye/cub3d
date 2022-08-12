@@ -6,37 +6,37 @@ void ft_check_border_bis(t_data *data)
     int size;
 
     i = 0;
-    while (data->tab_map[i])
+    while (data->pars.map[i])
     {
-        if (data->tab_map[i][0] != ' ' && data->tab_map[i][0] != '1')
-           ft_print_error_map(data->tab_map);
+        if (data->pars.map[i][0] != ' ' && data->pars.map[i][0] != '1')
+           ft_print_error_map(data->pars.map);
         i++;
     }
     i = 0;
-    while (data->tab_map[i])
+    while (data->pars.map[i])
     {
-        size = ft_strlen(data->tab_map[i]);
-        if (data->tab_map[i][size - 1] != ' ' 
-            && data->tab_map[i][size - 1] != '1')
-           ft_print_error_map(data->tab_map);
+        size = ft_strlen(data->pars.map[i]);
+        if (data->pars.map[i][size - 1] != ' ' 
+            && data->pars.map[i][size - 1] != '1')
+           ft_print_error_map(data->pars.map);
         i++;
     }
 }
 
 void ft_check_zero_bis(t_data *data, int i, int j)
 {
-    if ((data->tab_map[i - 1][j] && data->tab_map[i - 1][j] == ' ')
-        || !data->tab_map[i - 1][j])
-        ft_print_error_map(data->tab_map);
-    if ((data->tab_map[i + 1][j] && data->tab_map[i + 1][j] == ' ')
-        || !data->tab_map[i + 1][j])
-        ft_print_error_map(data->tab_map);
-    if ((data->tab_map[i][j - 1] && data->tab_map[i][j - 1] == ' ')
-        || !data->tab_map[i ][j - 1])
-        ft_print_error_map(data->tab_map);
-    if ((data->tab_map[i][j + 1] && data->tab_map[i][j + 1] == ' ')
-        || !data->tab_map[i][j + 1])
-        ft_print_error_map(data->tab_map);
+    if ((data->pars.map[i - 1][j] && data->pars.map[i - 1][j] == ' ')
+        || !data->pars.map[i - 1][j])
+        ft_print_error_map(data->pars.map);
+    if ((data->pars.map[i + 1][j] && data->pars.map[i + 1][j] == ' ')
+        || !data->pars.map[i + 1][j])
+        ft_print_error_map(data->pars.map);
+    if ((data->pars.map[i][j - 1] && data->pars.map[i][j - 1] == ' ')
+        || !data->pars.map[i ][j - 1])
+        ft_print_error_map(data->pars.map);
+    if ((data->pars.map[i][j + 1] && data->pars.map[i][j + 1] == ' ')
+        || !data->pars.map[i][j + 1])
+        ft_print_error_map(data->pars.map);
 }
 
 void ft_check_zero(t_data *data)
@@ -45,12 +45,12 @@ void ft_check_zero(t_data *data)
     int j;
 
     i = 0;
-    while (data->tab_map[i])
+    while (data->pars.map[i])
     {
         j = 0;
-        while (data->tab_map[i][j])
+        while (data->pars.map[i][j])
         {
-            if (data->tab_map[i][j] == '0')
+            if (data->pars.map[i][j] == '0')
                 ft_check_zero_bis(data, i, j);
             j++;
         }
@@ -66,25 +66,25 @@ void ft_count_char_map(t_data *data)
 
     i = 0;
     count = 0;
-    while (data->tab_map[i])
+    while (data->pars.map[i])
     {
         j = 0;
-        while (data->tab_map[i][j])
+        while (data->pars.map[i][j])
         {
-            if (data->tab_map[i][j] == 'N')
+            if (data->pars.map[i][j] == 'N')
                 count++;
-            if (data->tab_map[i][j] == 'S')
+            if (data->pars.map[i][j] == 'S')
                 count++;
-            if (data->tab_map[i][j] == 'W')
+            if (data->pars.map[i][j] == 'W')
                 count++;
-            if (data->tab_map[i][j] == 'E')
+            if (data->pars.map[i][j] == 'E')
                 count++;
             j++;
         }
         i++;
     } 
     if (count != 1)
-        ft_print_error_map(data->tab_map);
+        ft_print_error_map(data->pars.map);
 }
 
 void ft_check_map(t_data *data)

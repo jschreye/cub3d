@@ -29,8 +29,8 @@ void ft_registre_path_bis(t_data *data, char *str_tab, char *str, t_count *count
         tmp_tab = ft_split(str_tab, ',');
         if (ft_check_arg(tmp_tab) == 1)
             ft_print_error_cub(tmp_tab);
-        data->floor = ft_calloc(3, sizeof(int));
-        ft_atoi_arg(data->floor, tmp_tab);
+        data->pars.floor = ft_calloc(3, sizeof(int));
+        ft_atoi_arg(data->pars.floor, tmp_tab);
         ft_free_tab(tmp_tab);
         count->f++;
     }
@@ -40,8 +40,8 @@ void ft_registre_path_bis(t_data *data, char *str_tab, char *str, t_count *count
         tmp_tab = ft_split(str_tab, ',');
         if (ft_check_arg(tmp_tab) == 1)
             ft_print_error_cub(tmp_tab);
-        data->roof = ft_calloc(3, sizeof(int));
-        ft_atoi_arg(data->roof, tmp_tab);
+        data->pars.roof = ft_calloc(3, sizeof(int));
+        ft_atoi_arg(data->pars.roof, tmp_tab);
         ft_free_tab(tmp_tab);
         count->c++;
     }
@@ -51,26 +51,26 @@ void ft_registre_path(t_data *data, char *str_tab, char *str, t_count *count)
 {
     if (ft_strncmp(str, "NO", 2) == 0)
     {
-        data->no_texture = ft_calloc(ft_strlen(str_tab), sizeof(char));//PAS FREE
-        ft_strcpy(data->no_texture, ft_strchr(str_tab, '.'));
+        data->pars.no_texture = ft_calloc(ft_strlen(str_tab), sizeof(char));//PAS FREE
+        ft_strcpy(data->pars.no_texture, ft_strchr(str_tab, '.'));
         count->no++;
     }
     if (ft_strncmp(str, "SO", 2) == 0)
     {
-        data->so_texture = ft_calloc(ft_strlen(str_tab), sizeof(char));//PAS FREE
-        ft_strcpy(data->so_texture, ft_strchr(str_tab, '.'));
+        data->pars.so_texture = ft_calloc(ft_strlen(str_tab), sizeof(char));//PAS FREE
+        ft_strcpy(data->pars.so_texture, ft_strchr(str_tab, '.'));
         count->so++;
     }
     if (ft_strncmp(str, "WE", 2) == 0)
     {
-        data->we_texture = ft_calloc(ft_strlen(str_tab), sizeof(char));//PAS FREE
-        ft_strcpy(data->we_texture, ft_strchr(str_tab, '.'));
+        data->pars.we_texture = ft_calloc(ft_strlen(str_tab), sizeof(char));//PAS FREE
+        ft_strcpy(data->pars.we_texture, ft_strchr(str_tab, '.'));
         count->we++;
     }
     if (ft_strncmp(str, "EA", 2) == 0)
     {
-        data->ea_texture = ft_calloc(ft_strlen(str_tab), sizeof(char));//PAS FREE
-        ft_strcpy(data->ea_texture, ft_strchr(str_tab, '.'));
+        data->pars.ea_texture = ft_calloc(ft_strlen(str_tab), sizeof(char));//PAS FREE
+        ft_strcpy(data->pars.ea_texture, ft_strchr(str_tab, '.'));
         count->ea++;
     }
     ft_registre_path_bis(data, str_tab, str, count);
