@@ -160,6 +160,7 @@ void	ft_check_size_map(t_data *data);
 void	ft_free_tab(char **tab);
 void	ft_print_tab(char **tab);
 int		ft_close(void);
+int		ft_count_tab(char **tab);
 
 //raycasting
 void	ft_get_image(t_data *data, char c);

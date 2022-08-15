@@ -1,4 +1,25 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_map_bis.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 14:12:39 by jschreye          #+#    #+#             */
+/*   Updated: 2022/08/15 14:22:01 by jschreye         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
+
+void	ft_check_p_bis(t_data *data, int i, int j)
+{
+	if ((data->pars.map[i - 1][j] == ' ' && data->pars.map[i - 1][j])
+			|| (data->pars.map[i + 1][j] == ' ' && data->pars.map[i + 1][j])
+			|| (data->pars.map[i][j - 1] == ' ' && data->pars.map[i][j - 1])
+			|| (data->pars.map[i][j + 1] == ' ' && data->pars.map[i][j + 1]))
+		ft_print_error_map(data->pars.map);
+}	
 
 void	ft_check_p(t_data *data)
 {
@@ -17,11 +38,7 @@ void	ft_check_p(t_data *data)
 				data->pars.player = data->pars.map[i][j];
 				data->pars.pl_x = i;
 				data->pars.pl_y = j;
-				if ((data->pars.map[i - 1][j] == ' ' && data->pars.map[i - 1][j])
-					|| (data->pars.map[i + 1][j] == ' ' && data->pars.map[i + 1][j])
-					|| (data->pars.map[i][j - 1] == ' ' && data->pars.map[i][j - 1])
-					|| (data->pars.map[i][j + 1] == ' ' && data->pars.map[i][j + 1]))
-					ft_print_error_map(data->pars.map);
+				ft_check_p_bis(data, i, j);
 			}
 			j++;
 		}
@@ -49,16 +66,6 @@ void	ft_check_char_map(t_data *data)
 		}
 		i++;
 	}
-}
-
-int	ft_count_tab(char **tab)
-{
-	int	count;
-
-	count = 0;
-	while (tab[count])
-		count++;
-	return (count - 1);
 }
 
 void	ft_check_border(t_data *data)

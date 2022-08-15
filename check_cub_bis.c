@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_cub_bis.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jschreye <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/08/15 14:11:04 by jschreye          #+#    #+#             */
+/*   Updated: 2022/08/15 14:11:37 by jschreye         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
 
 void	ft_atoi_arg(int *tab_int, char **tab)
@@ -19,7 +31,8 @@ void	ft_atoi_arg(int *tab_int, char **tab)
 	}
 }
 
-void	ft_registre_path_bis(t_data *data, char *str_tab, char *str, t_count *count)
+void	ft_registre_path_bis(t_data *data,
+			char *str_tab, char *str, t_count *count)
 {
 	char	**tmp_tab;
 

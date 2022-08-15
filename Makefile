@@ -29,6 +29,7 @@ SRCS =  main.c \
 		init_texture.c \
 		get_image.c \
 		init_map.c \
+		utils.c \
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
 
