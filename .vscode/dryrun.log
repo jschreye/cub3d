@@ -1,0 +1,93 @@
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Users/grubin/Desktop/cub3d'
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ./libft
+ 
+make[1]: Entering directory `/Users/grubin/Desktop/cub3d/libft'
+gcc -Wextra -Werror -Wall -o ft_strcpy.o -c ft_strcpy.c
+ 
+gcc -Wextra -Werror -Wall -o ft_strcat.o -c ft_strcat.c
+gcc -Wextra -Werror -Wall -o ft_realloc.o -c ft_realloc.c
+ 
+gcc -Wextra -Werror -Wall -o ft_join.o -c ft_join.c
+gcc -Wextra -Werror -Wall -o ft_atoi.o -c ft_atoi.c
+gcc -Wextra -Werror -Wall -o ft_bzero.o -c ft_bzero.c
+gcc -Wextra -Werror -Wall -o ft_calloc.o -c ft_calloc.c
+gcc -Wextra -Werror -Wall -o ft_isalnum.o -c ft_isalnum.c
+gcc -Wextra -Werror -Wall -o ft_isalpha.o -c ft_isalpha.c
+gcc -Wextra -Werror -Wall -o ft_isascii.o -c ft_isascii.c
+gcc -Wextra -Werror -Wall -o ft_isdigit.o -c ft_isdigit.c
+gcc -Wextra -Werror -Wall -o ft_isprint.o -c ft_isprint.c
+gcc -Wextra -Werror -Wall -o ft_itoa.o -c ft_itoa.c
+ 
+gcc -Wextra -Werror -Wall -o ft_memchr.o -c ft_memchr.c
+gcc -Wextra -Werror -Wall -o ft_memcmp.o -c ft_memcmp.c
+gcc -Wextra -Werror -Wall -o ft_memcpy.o -c ft_memcpy.c
+gcc -Wextra -Werror -Wall -o ft_memmove.o -c ft_memmove.c
+gcc -Wextra -Werror -Wall -o ft_memset.o -c ft_memset.c
+gcc -Wextra -Werror -Wall -o ft_putchar_fd.o -c ft_putchar_fd.c
+gcc -Wextra -Werror -Wall -o ft_putendl_fd.o -c ft_putendl_fd.c
+ 
+gcc -Wextra -Werror -Wall -o ft_putnbr_fd.o -c ft_putnbr_fd.c
+gcc -Wextra -Werror -Wall -o ft_putstr_fd.o -c ft_putstr_fd.c
+gcc -Wextra -Werror -Wall -o ft_split.o -c ft_split.c
+gcc -Wextra -Werror -Wall -o ft_strchr.o -c ft_strchr.c
+gcc -Wextra -Werror -Wall -o ft_strdup.o -c ft_strdup.c
+gcc -Wextra -Werror -Wall -o ft_striteri.o -c ft_striteri.c
+gcc -Wextra -Werror -Wall -o ft_strjoin.o -c ft_strjoin.c
+gcc -Wextra -Werror -Wall -o ft_strlcat.o -c ft_strlcat.c
+ 
+gcc -Wextra -Werror -Wall -o ft_strlcpy.o -c ft_strlcpy.c
+gcc -Wextra -Werror -Wall -o ft_strlen.o -c ft_strlen.c
+gcc -Wextra -Werror -Wall -o ft_strmapi.o -c ft_strmapi.c
+gcc -Wextra -Werror -Wall -o ft_strncmp.o -c ft_strncmp.c
+gcc -Wextra -Werror -Wall -o ft_strnstr.o -c ft_strnstr.c
+gcc -Wextra -Werror -Wall -o ft_strrchr.o -c ft_strrchr.c
+gcc -Wextra -Werror -Wall -o ft_strtrim.o -c ft_strtrim.c
+gcc -Wextra -Werror -Wall -o ft_substr.o -c ft_substr.c
+ 
+gcc -Wextra -Werror -Wall -o ft_tolower.o -c ft_tolower.c
+gcc -Wextra -Werror -Wall -o ft_toupper.o -c ft_toupper.c
+ar rsc libft.a ft_strcpy.o ft_strcat.o ft_realloc.o ft_join.o ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_itoa.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_putchar_fd.o ft_putendl_fd.o ft_putnbr_fd.o ft_putstr_fd.o ft_split.o ft_strchr.o ft_strdup.o ft_striteri.o ft_strjoin.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strmapi.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_strtrim.o ft_substr.o ft_tolower.o ft_toupper.o
+make[1]: Leaving directory `/Users/grubin/Desktop/cub3d/libft'
+mkdir -p ./objs
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/main.o -c main.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/check_cub.o -c check_cub.c
+ 
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/get_next_line_utils.o -c get_next_line_utils.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/get_next_line.o -c get_next_line.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/init_struct.o -c init_struct.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/check_error.o -c check_error.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/check_cub_bis.o -c check_cub_bis.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/check_cub_bis_bis.o -c check_cub_bis_bis.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/check_map.o -c check_map.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/check_map_bis.o -c check_map_bis.c
+ 
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/init_world.o -c init_world.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/init_texture.o -c init_texture.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/get_image.o -c get_image.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/init_map.o -c init_map.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/utils.o -c utils.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/raycasting.o -c raycasting.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/ray_check.o -c ray_check.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/move.o -c move.c
+gcc -Wextra -Werror -Wall -Ilibft -I/Users/grubin -o objs/utils_ray.o -c utils_ray.c
+/Applications/Xcode.app/Contents/Developer/usr/bin/make -C ./mlx
+ 
+make[1]: Entering directory `/Users/grubin/Desktop/cub3d/mlx'
+cc -O2 -DSTRINGPUTX11   -c -o mlx_shaders.o mlx_shaders.c
+ 
+cc -O2 -DSTRINGPUTX11   -c -o mlx_new_window.o mlx_new_window.m
+cc -O2 -DSTRINGPUTX11   -c -o mlx_init_loop.o mlx_init_loop.m
+ 
+cc -O2 -DSTRINGPUTX11   -c -o mlx_new_image.o mlx_new_image.m
+cc -O2 -DSTRINGPUTX11   -c -o mlx_xpm.o mlx_xpm.c
+cc -O2 -DSTRINGPUTX11   -c -o mlx_int_str_to_wordtab.o mlx_int_str_to_wordtab.c
+cc -O2 -DSTRINGPUTX11   -c -o mlx_png.o mlx_png.c
+cc -O2 -DSTRINGPUTX11   -c -o mlx_mouse.o mlx_mouse.m
+ar -r libmlx.a mlx_shaders.o mlx_new_window.o mlx_init_loop.o mlx_new_image.o mlx_xpm.o mlx_int_str_to_wordtab.o mlx_png.o mlx_mouse.o
+ranlib libmlx.a
+make[1]: Leaving directory `/Users/grubin/Desktop/cub3d/mlx'
+ 
+gcc -o cub3D ./objs/main.o ./objs/check_cub.o ./objs/get_next_line_utils.o ./objs/get_next_line.o ./objs/init_struct.o ./objs/check_error.o ./objs/check_cub_bis.o ./objs/check_cub_bis_bis.o ./objs/check_map.o ./objs/check_map_bis.o ./objs/init_world.o ./objs/init_texture.o ./objs/get_image.o ./objs/init_map.o ./objs/utils.o ./objs/raycasting.o ./objs/ray_check.o ./objs/move.o ./objs/utils_ray.o ./libft/libft.a ./mlx/libmlx.a -Llibft -L/Users/grubin -Lmlx -lmlx -framework OpenGL -framework Appkit
+make: Leaving directory `/Users/grubin/Desktop/cub3d'
+ 

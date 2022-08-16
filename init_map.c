@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschreye <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: grubin <grubin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 14:29:31 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/15 14:29:33 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/16 12:08:57 by grubin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,15 @@ static int	ft_get_map_size(int width, int height)
 	return (size1);
 }
 
+void	ft_init_map_bis(t_data *data)
+{
+	data->maping.image = mlx_new_image(data->win.mlx,
+		data->map.w, data->map.h);
+	data->maping.addr = mlx_get_data_addr(data->maping.image,
+		&data->maping.bits_per_pixel, &data->maping.line_length,
+		&data->maping.endian);
+}
+
 void	ft_init_map(t_data *data)
 {
 	data->map.map_size = ft_get_map_size(data->pars.map_w,
@@ -64,4 +73,5 @@ void	ft_init_map(t_data *data)
 	data->map.a_deg = ft_rad_to_deg(data->map.a_rad);
 	data->map.delta_x = cos(-data->map.a_rad);
 	data->map.delta_y = sin(-data->map.a_rad);
+	ft_init_map_bis(data);
 }

@@ -30,7 +30,11 @@ SRCS =  main.c \
 		get_image.c \
 		init_map.c \
 		utils.c \
-
+		raycasting.c \
+		ray_check.c \
+		move.c \
+		utils_ray.c \
+		
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
 
 vpath %.c $(SRCS_DIR)

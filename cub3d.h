@@ -23,6 +23,7 @@ typedef struct s_map
 	float	prev_x;
 	float	prev_y;
 	float	a_rad;
+	float   pl_angle;
 	int		a_deg;
 	float	delta_x;
 	float	delta_y;
@@ -42,6 +43,37 @@ typedef struct s_img
 
 typedef struct s_ray
 {
+	int		hmx;
+	int 	hmy;
+	int		vmx;
+	int 	vmy;
+	int 	i;
+	int		h_shift;
+	int		v_shift;
+	int 	ix;
+	int		rays;
+	int		r_1;
+	int		r_05;
+	char	spe;
+	char	cross;
+	char	char_map;
+	float	wx;
+	float	wy;
+	float	dist;
+	float 	hx;
+	float	hy;
+	float 	vx;
+	float	vy;
+	float	y;
+	float	x;
+	float	yo;
+	float	xo;
+	float	dist_v;
+	float	dist_h;
+	float	atan;
+	float	ntan;
+	double	r_ra;
+	double  fov_05;
 	t_img	tx_n;
 	t_img	tx_w;
 	t_img	tx_e;
@@ -122,6 +154,7 @@ typedef struct s_data
 	t_parsing	pars;
 	t_key		key;
 	t_image		world;
+	t_image		maping;
 	t_ray		ray;
 	t_map		map;
 }				t_data;
@@ -161,8 +194,19 @@ void	ft_free_tab(char **tab);
 void	ft_print_tab(char **tab);
 int		ft_close(void);
 int		ft_count_tab(char **tab);
+float	ft_deg_to_rad(int angle);
+float	ft_rad_to_deg(int angle);
 
 //raycasting
-void	ft_get_image(t_data *data, char c);
+void	ft_get_image(t_data *data);
+void	my_mlx_pixel_put(t_image *img, int x, int y, int color);
+void 	ft_raycasting(t_data *data);
+void ft_check_angle(float angle, int *deg);
+void  ft_check_hori_ray(t_parsing *pars, t_map *map, t_ray *ray);
+void  ft_check_verti_ray(t_parsing *pars, t_map *map, t_ray *ray);
+void ft_compare_rays(t_data *data);
 
+//move
+int	ft_map_char(char c);
+void	check_char_map(t_data *data);
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_world.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschreye <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: grubin <grubin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 14:00:46 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/15 14:02:13 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/16 11:07:38 by grubin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,8 @@ void	ft_init_world(t_data *data)
 		while (++x < data->win.width)
 			my_mlx_pixel_put(&data->world, x, y, 0x00505050);
 	}
+	data->ray.r_1 = 60 * 8;
+	data->ray.r_05 = data->ray.r_1 / 2;
+	data->ray.r_ra = (0.017453293 / 8);
+	data->ray.fov_05 = data->ray.r_05 * data->ray.r_ra;
 }

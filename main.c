@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: grubin <grubin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 10:45:29 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/15 14:21:18 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/16 13:10:36 by grubin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	main(int argc, char **argv)
 	ft_init_world(&data);
 	ft_init_texture(&data);
 	ft_init_map(&data);
-	ft_get_image(&data, '1');
+	ft_get_image(&data);
 	mlx_hook(data.win.mlx_win, 17, 1L << 0, ft_close, &data);
 	mlx_loop(data.win.mlx);
 	return (0);
