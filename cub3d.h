@@ -234,7 +234,7 @@ void	ft_print_tab(char **tab);
 int	ft_close(t_data *data);
 int		ft_count_tab(char **tab);
 float	ft_deg_to_rad(int angle);
-float	ft_rad_to_deg(int angle);
+int	ft_rad_to_deg(float angle);
 float	ft_fix_fisheye(float angle);
 
 //raycasting

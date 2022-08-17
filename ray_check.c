@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 08:50:25 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/17 17:28:24 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/17 17:41:06 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	ft_verti_loop(t_parsing *pars, t_map *map, t_ray *ray)
 	{
 		ray->vmx = ((int)ray->x) / map->map_size;
 		ray->vmy = ((int)ray->y) / map->map_size;
+		printf("x00 = %f\n", ray->x);
+		printf("y00 = %f\n", ray->y);
 		if (ray->x >= 0 && ray->x < map->w && ray->y >= 0 && ray->y < map->h
 			&& !ft_map_char(pars->map[ray->vmy][ray->hmx + ray->v_shift]))
 		{

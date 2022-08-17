@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 10:45:29 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/17 14:30:08 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/17 17:37:52 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ int	main(int argc, char **argv)
 	ft_init_world(&data);
 	ft_init_texture(&data);
 	ft_init_map(&data);
-	//printf("cols = %d\nrows = %d\n", data.pars.map_w, data.pars.map_h);
 	ft_get_image(&data);
 	mlx_hook(data.win.mlx_win, 2, 0, ft_key_press, &data);
 	mlx_hook(data.win.mlx_win, 3, 0, ft_key_release, &data);	
