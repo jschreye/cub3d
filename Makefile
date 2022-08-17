@@ -34,6 +34,11 @@ SRCS =  main.c \
 		ray_check.c \
 		move.c \
 		utils_ray.c \
+		get_3d.c \
+		texture.c \
+		texture_bis.c \
+		check_key.c \
+		events_loop.c \
 		
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
 

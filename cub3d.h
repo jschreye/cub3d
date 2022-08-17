@@ -18,13 +18,18 @@ typedef struct s_map
 	int		h;
 	int		h_offset;
 	int		w_offset;
-	float	pos_x;
+	int		a_deg;
+	int		c_floor;
+	int		c_ceil;
+	float	ws_fps;
+	float	ad_fps;
+	float	rot_fps;
 	float	pos_y;
+	float	pos_x;
 	float	prev_x;
 	float	prev_y;
 	float	a_rad;
 	float   pl_angle;
-	int		a_deg;
 	float	delta_x;
 	float	delta_y;
 }			t_map;
@@ -54,10 +59,22 @@ typedef struct s_ray
 	int		rays;
 	int		r_1;
 	int		r_05;
+	int		lpr_cpy;
+	int		lpr;
+	int		y1;
+	int		y2;
+	int		iy;
 	char	spe;
 	char	cross;
 	char	char_map;
+	float	ty;
+	float	shade;
+	float	tx;
+	float	w_top;
+	float	to;
+	float	ty_step;
 	float	wx;
+	float	w_bot;
 	float	wy;
 	float	dist;
 	float 	hx;
@@ -74,10 +91,12 @@ typedef struct s_ray
 	float	ntan;
 	double	r_ra;
 	double  fov_05;
+	unsigned int c;
 	t_img	tx_n;
 	t_img	tx_w;
 	t_img	tx_e;
 	t_img	tx_s;
+	t_img	*tex;
 }			t_ray;
 
 typedef struct s_image
@@ -126,6 +145,8 @@ typedef struct s_parsing
 	int		pl_y;
 	int		map_h;
 	int		map_w;
+	unsigned long hex_f;
+	unsigned long	hex_s;
 	char	player;
 	char	*no_texture;
 	char	*so_texture;
@@ -148,6 +169,21 @@ typedef struct s_window
 	int					world_h;
 }						t_window;
 
+typedef struct s_grid
+{
+	int		of;
+	int		xo;
+	int		yo;
+	int		vo;
+	int		ho;
+	int		mx;
+	int		mx_add_xo;
+	int		mx_sub_xo;
+	int		my;
+	int		my_add_yo;
+	int		my_sub_yo;
+}	t_grid;
+
 typedef struct s_data
 {
 	t_window	win;
@@ -157,6 +193,7 @@ typedef struct s_data
 	t_image		maping;
 	t_ray		ray;
 	t_map		map;
+	t_grid		grid;
 }				t_data;
 
 // initialisation
@@ -181,6 +218,8 @@ int		ft_check_space(char *str);
 void	ft_check_tab_data(t_data *data, char **tab);
 void	ft_delete_space(char **tab);
 int		ft_check_arg(char **tab);
+unsigned long	ft_create_rgb(int t, int r, int g, int b);
+void	ft_get_color(t_data *data);
 
 //parsing_map
 void	ft_check_map(t_data *data);
@@ -192,10 +231,11 @@ void	ft_check_size_map(t_data *data);
 //utils
 void	ft_free_tab(char **tab);
 void	ft_print_tab(char **tab);
-int		ft_close(void);
+int	ft_close(t_data *data);
 int		ft_count_tab(char **tab);
 float	ft_deg_to_rad(int angle);
 float	ft_rad_to_deg(int angle);
+float	ft_fix_fisheye(float angle);
 
 //raycasting
 void	ft_get_image(t_data *data);
@@ -205,8 +245,27 @@ void ft_check_angle(float angle, int *deg);
 void  ft_check_hori_ray(t_parsing *pars, t_map *map, t_ray *ray);
 void  ft_check_verti_ray(t_parsing *pars, t_map *map, t_ray *ray);
 void ft_compare_rays(t_data *data);
+void ft_get_3d(t_data *data, t_ray *ray);
+
+//texture
+t_img *ft_ray_texture(float ray_a, t_ray *ray);
+int ft_ray_color(float ray_a, t_ray *ray);
+void    ft_use_color(t_data *data, t_ray *ray);
+void    ft_use_texture(t_data *data, t_ray *ray);
+float	ft_color_shade(float ray_a, t_ray *ray);
+void	ft_draw_v_line(t_image *image, t_ray *ray, int color);
+void	ft_wall_texture(t_data *data, t_ray *ray);
+unsigned int	ft_get_tex_color(t_img *tex, int x, int y, float shade);
 
 //move
 int	ft_map_char(char c);
 void	check_char_map(t_data *data);
+int	ft_events_loop(t_data *data);
+void	ft_move(t_data *data, char dir);
+void	ft_rotation(t_data *data, char dir);
+
+//key
+int	ft_key_press(int k, t_data *data);
+int	ft_key_release(int k, t_data *data);
+
 #endif

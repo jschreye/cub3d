@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_cub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschreye <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 14:02:39 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/15 14:02:40 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/17 10:41:23 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,5 +126,6 @@ void	ft_check_cub(t_data *data)
 	free (str_full_cub);
 	ft_check_last_line(tab);
 	ft_parsing_cub(data, tab);
+	ft_get_color(data);
 	ft_check_map(data);
 }

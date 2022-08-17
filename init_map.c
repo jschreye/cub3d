@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grubin <grubin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 14:29:31 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/16 12:08:57 by grubin           ###   ########.fr       */
+/*   Updated: 2022/08/17 15:16:31 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,15 @@ static int	ft_get_map_size(int width, int height)
 void	ft_init_map_bis(t_data *data)
 {
 	data->maping.image = mlx_new_image(data->win.mlx,
-		data->map.w, data->map.h);
+			data->map.w, data->map.h);
 	data->maping.addr = mlx_get_data_addr(data->maping.image,
-		&data->maping.bits_per_pixel, &data->maping.line_length,
-		&data->maping.endian);
+			&data->maping.bits_per_pixel, &data->maping.line_length,
+			&data->maping.endian);
+	data->map.c_floor = data->pars.hex_f;
+	data->map.c_ceil = data->pars.hex_s;
+	data->map.ws_fps = 1;
+	data->map.ad_fps = 0.75;
+	data->map.rot_fps = 10;
 }
 
 void	ft_init_map(t_data *data)
@@ -56,9 +61,9 @@ void	ft_init_map(t_data *data)
 	data->map.h_offset = data->win.world_h + 5 + ((120 - (2 * 5))
 			- data->map.h) / 2;
 	data->map.w_offset = (data->win.width - (2 * 5) - data->map.w) / 2;
-	data->map.pos_x = (data->pars.pl_x * data->map.map_size)
+	data->map.pos_y = (data->pars.pl_x * data->map.map_size)
 		+ (0.5 * data->map.map_size) - (0.5 * 3);
-	data->map.pos_y = (data->pars.pl_y * data->map.map_size)
+	data->map.pos_x = (data->pars.pl_y * data->map.map_size)
 		+ (0.5 * data->map.map_size) - (0.5 * 3);
 	data->map.prev_x = data->map.pos_x;
 	data->map.prev_y = data->map.pos_y;

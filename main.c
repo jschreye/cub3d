@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grubin <grubin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 10:45:29 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/16 13:10:36 by grubin           ###   ########.fr       */
+/*   Updated: 2022/08/17 14:30:08 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,11 @@ void	ft_free_tab(char **tab)
 	free(tab);
 }
 
-int	ft_close(void)
+int	ft_close(t_data *data)
 {
+	mlx_clear_window(data->win.mlx, data->win.mlx_win);
+	mlx_destroy_window(data->win.mlx, data->win.mlx_win);
+	printf("Program left properly.\n");
 	exit(0);
 }
 
@@ -58,8 +61,12 @@ int	main(int argc, char **argv)
 	ft_init_world(&data);
 	ft_init_texture(&data);
 	ft_init_map(&data);
+	//printf("cols = %d\nrows = %d\n", data.pars.map_w, data.pars.map_h);
 	ft_get_image(&data);
+	mlx_hook(data.win.mlx_win, 2, 0, ft_key_press, &data);
+	mlx_hook(data.win.mlx_win, 3, 0, ft_key_release, &data);	
 	mlx_hook(data.win.mlx_win, 17, 1L << 0, ft_close, &data);
+	mlx_loop_hook(data.win.mlx, ft_events_loop, &data);
 	mlx_loop(data.win.mlx);
 	return (0);
 }

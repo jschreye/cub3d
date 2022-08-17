@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_cub_bis_bis.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschreye <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 14:11:45 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/15 14:12:00 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/17 10:47:16 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,18 @@ int	ft_check_space(char *str)
 		i++;
 	}
 	return (1);
+}
+
+unsigned long	ft_create_rgb(int t, int r, int g, int b)
+{
+	return (((t & 0xFF) << 24) + ((r & 0xFF) << 16) + \
+			((g & 0xFF) << 8) + (b & 0xFF));
+}
+
+void	ft_get_color(t_data *data)
+{
+	data->pars.hex_f = ft_create_rgb(0, data->pars.floor[0],
+		data->pars.floor[1], data->pars.floor[2]);
+	data->pars.hex_s = ft_create_rgb(0, data->pars.roof[0],
+		data->pars.roof[1], data->pars.roof[2]);
 }
