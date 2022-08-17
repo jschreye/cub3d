@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 14:29:31 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/17 17:33:00 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/17 18:22:49 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ float	ft_deg_to_rad(int angle)
 
 int	ft_rad_to_deg(float angle)
 {
-	printf("angle = %f\n", angle);
 	return (angle / 3.1415926535 * 180);
 }
 

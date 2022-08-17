@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 08:50:25 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/17 17:41:06 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/17 18:18:58 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,14 @@ void	ft_verti_loop(t_parsing *pars, t_map *map, t_ray *ray)
 	{
 		ray->vmx = ((int)ray->x) / map->map_size;
 		ray->vmy = ((int)ray->y) / map->map_size;
-		printf("x00 = %f\n", ray->x);
-		printf("y00 = %f\n", ray->y);
 		if (ray->x >= 0 && ray->x < map->w && ray->y >= 0 && ray->y < map->h
 			&& !ft_map_char(pars->map[ray->vmy][ray->hmx + ray->v_shift]))
 		{
 			ray->vx = ray->x;
 			ray->vy = ray->y;
+			printf("r.vy = %f\n r.vx = %f\n", ray->y, ray->x);
 			ray->dist_v = sqrt(powf((ray->x - map->pos_x), 2)
 					+ powf((ray->y - map->pos_y), 2));
-			//printf("v = %f\n", ray->dist_v);
-			//printf("x = %f\n", ray->x);
-			//printf("posx = %f\n", map->pos_x);
-			//printf("y = %f\n", ray->y);
-			//printf("posy = %f\n", map->pos_y);
 			ray->i = pars->map_w;
 		}
 		else
@@ -108,12 +102,11 @@ void	ft_check_verti_ray(t_parsing *pars, t_map *map, t_ray *ray)
 		ray->yo = -ray->xo * ray->ntan;
 		ray->v_shift = -1;
 	}
-	else if (map->a_deg < 90 || map->a_deg < 270)
+	else if (map->a_deg < 90 || map->a_deg > 270)
 	{
 		ray->x = ((int)(map->pos_x / map->map_size)) * map->map_size
 			+ map->map_size;
 		ray->y = (map->pos_x - ray->x) * ray->ntan + map->pos_y;
-		printf("r.y1 = %f\n r.x2 = %f\n", ray->y, ray->x);
 		ray->xo = map->map_size;
 		ray->yo = -ray->xo * ray->ntan;
 	}
@@ -135,7 +128,7 @@ void	ft_compare_rays(t_data *data)
 		data->ray.y = data->ray.vy;
 		data->ray.wx = data->ray.x / data->map.map_size;
 		data->ray.wy = data->ray.y / data->map.map_size;
-		//printf("r.y = %f\n r.x = %f\n", data->ray.y, data->ray.x);
+		printf("r.y = %f\n r.x = %f\n", data->ray.y, data->ray.x);
 		data->ray.dist = data->ray.dist_v;
 		data->ray.cross = 'v';
 		data->ray.char_map
@@ -148,7 +141,7 @@ void	ft_compare_rays(t_data *data)
 		data->ray.y = data->ray.hy;
 		data->ray.wx = data->ray.x / data->map.map_size;
 		data->ray.wy = data->ray.y / data->map.map_size;
-		printf("r.y = %f\n r.x = %f\n", data->ray.y, data->ray.x);
+		//printf("r.y = %f\n r.x = %f\n", data->ray.y, data->ray.x);
 		data->ray.dist = data->ray.dist_h;
 		data->ray.cross = 'v';
 		data->ray.char_map
