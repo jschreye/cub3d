@@ -67,12 +67,6 @@ void	ft_wall_texture(t_data *data, t_ray *ray)
 	while (++ray->iy < ray->w_bot)
 	{
 		ray->c = ft_get_tex_color(ray->tex, ray->tx, ray->ty, ray->shade);
-		/*printf("c = %d\n", ray->c);
-		//printf("tex = %d\n", ray->tex);
-		printf("tx = %f\n", ray->tx);
-		printf("ty = %f\n", ray->ty);
-		printf("shade = %f\n", ray->shade);*/
-		exit(0);
 		my_mlx_pixel_put(&data->world, ray->ix, ray->iy + ray->w_top, ray->c);
 		ray->ty += ray->ty_step;
 	}

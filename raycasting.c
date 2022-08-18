@@ -21,7 +21,6 @@ void	ft_raycasting(t_data *data)
 	ft_check_angle(data->map.a_rad, &data->map.a_deg);
 	data->ray.rays = -1;
 	data->ray.ix = 0;
-	printf("ray.y1 = %f\n ray.x2 = %f\n", data->ray.y, data->ray.x);
 	while (++data->ray.rays < data->ray.r_1)
 	{
 		data->ray.dist_v = 0;

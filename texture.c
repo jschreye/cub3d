@@ -48,14 +48,9 @@ void    ft_use_texture(t_data *data, t_ray *ray)
     }
     else
     {
-		printf("wy = %f\n width = %d\n", ray->wy, ray->tex->width);
 		ray->tx = (int)((ray->wy - (int)ray->wy) * ray->tex->width);
-		printf("tx2 = %f\n", ray->tx);
 		if (data->map.a_deg > 90 && data->map.a_deg < 270)
-		{
 			ray->tx = ray->tex->width - ray->tx - 1;
-			printf("tx1 = %f\n", ray->tx);
-		}
     }
     ray->shade = ft_color_shade(data->map.a_deg, ray);
     while(--ray->lpr)

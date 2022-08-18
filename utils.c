@@ -24,7 +24,7 @@ int	ft_count_tab(char **tab)
 
 int	ft_map_char(char c)
 {
-	if (c == '1')
+	if (c <= '6' && c >= '1')
 		return (0);
 	return (1);
 }

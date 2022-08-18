@@ -14,7 +14,6 @@
 
 void	ft_hori_loop(t_parsing *pars, t_map *map, t_ray *ray)
 {
-	// waleur hx et hy just
 	while (++ray->i < pars->map_h - 2)
 	{
 		ray->hmx = ((int) ray->x) / map->map_size;
@@ -43,11 +42,10 @@ void	ft_verti_loop(t_parsing *pars, t_map *map, t_ray *ray)
 		ray->vmx = ((int)ray->x) / map->map_size;
 		ray->vmy = ((int)ray->y) / map->map_size;
 		if (ray->x >= 0 && ray->x < map->w && ray->y >= 0 && ray->y < map->h
-			&& !ft_map_char(pars->map[ray->vmy][ray->hmx + ray->v_shift]))
-		{
+			&& !ft_map_char(pars->map[ray->vmy][ray->vmx + ray->v_shift]))
+		{		
 			ray->vx = ray->x;
 			ray->vy = ray->y;
-			printf("r.vy = %f\n r.vx = %f\n", ray->y, ray->x);
 			ray->dist_v = sqrt(powf((ray->x - map->pos_x), 2)
 					+ powf((ray->y - map->pos_y), 2));
 			ray->i = pars->map_w;
@@ -93,7 +91,6 @@ void	ft_check_verti_ray(t_parsing *pars, t_map *map, t_ray *ray)
 {
 	ray->i = -1;
 	ray->v_shift = 0;
-	printf("a_deg = %d\n", map->a_deg);
 	if (map->a_deg > 90 && map->a_deg < 270)
 	{
 		ray->x = ((int)(map->pos_x / map->map_size)) * map->map_size;
@@ -128,7 +125,6 @@ void	ft_compare_rays(t_data *data)
 		data->ray.y = data->ray.vy;
 		data->ray.wx = data->ray.x / data->map.map_size;
 		data->ray.wy = data->ray.y / data->map.map_size;
-		printf("r.y = %f\n r.x = %f\n", data->ray.y, data->ray.x);
 		data->ray.dist = data->ray.dist_v;
 		data->ray.cross = 'v';
 		data->ray.char_map
@@ -141,7 +137,6 @@ void	ft_compare_rays(t_data *data)
 		data->ray.y = data->ray.hy;
 		data->ray.wx = data->ray.x / data->map.map_size;
 		data->ray.wy = data->ray.y / data->map.map_size;
-		//printf("r.y = %f\n r.x = %f\n", data->ray.y, data->ray.x);
 		data->ray.dist = data->ray.dist_h;
 		data->ray.cross = 'v';
 		data->ray.char_map
