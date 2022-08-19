@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_check.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: grubin <grubin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 08:50:25 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/17 18:18:58 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/19 09:33:48 by grubin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ void	ft_compare_rays(t_data *data)
 		data->ray.wx = data->ray.x / data->map.map_size;
 		data->ray.wy = data->ray.y / data->map.map_size;
 		data->ray.dist = data->ray.dist_h;
-		data->ray.cross = 'v';
+		data->ray.cross = 'h';
 		data->ray.char_map
 			= data->pars.map[data->ray.hmy + data->ray.h_shift][data->ray.hmx];
 		ft_check_char_map(data);

@@ -3,12 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   init_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschreye <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*   By: grubin <grubin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 13:58:18 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/15 14:00:34 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/19 10:38:24 by grubin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "cub3d.h"
 
 void	ft_init_texture_bis(t_data *data)

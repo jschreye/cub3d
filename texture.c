@@ -24,16 +24,16 @@ int ft_ray_color(float ray_a, t_ray *ray)
 	if (ray->cross == 'v')
 	{
 		if (ray_a > 90 && ray_a < 270)
-			return (0x00101010);
+			return (0x00ffffff);
 		else
-			return (0x00202020);
+			return (0x00ffffff);
 	}
 	else if (ray->cross == 'h')
 	{
 		if (ray_a > 0 && ray_a < 180)
-			return (0x00303030);
+			return (0x00ffffff);
 		else
-			return (0x00000000);
+			return (0x00ffffff);
 	}
 	return (0x00ffffff);
 }
@@ -44,7 +44,7 @@ void    ft_use_texture(t_data *data, t_ray *ray)
     {
         ray->tx = (int)((ray->wx - (int)ray->wx) * ray->tex->width);
         if (data->map.a_deg > 180)
-            ray->tx = ray->tex->width - ray->tx -1;
+            ray->tx = ray->tex->width - ray->tx - 1;
     }
     else
     {

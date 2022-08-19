@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: grubin <grubin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 14:29:51 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/17 13:28:56 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/19 09:22:36 by grubin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_count_tab(char **tab)
 
 int	ft_map_char(char c)
 {
-	if (c <= '6' && c >= '1')
+	if (c == '1')
 		return (0);
 	return (1);
 }
