@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 14:11:45 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/17 10:47:16 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/19 13:44:16 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ unsigned long	ft_create_rgb(int t, int r, int g, int b)
 void	ft_get_color(t_data *data)
 {
 	data->pars.hex_f = ft_create_rgb(0, data->pars.floor[0],
-		data->pars.floor[1], data->pars.floor[2]);
+			data->pars.floor[1], data->pars.floor[2]);
 	data->pars.hex_s = ft_create_rgb(0, data->pars.roof[0],
-		data->pars.roof[1], data->pars.roof[2]);
+			data->pars.roof[1], data->pars.roof[2]);
 }

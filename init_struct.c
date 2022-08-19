@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 14:29:40 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/17 14:08:21 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/19 15:05:04 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,11 +58,10 @@ void	ft_init_struct_count(t_count *count)
 void	ft_init_struct_win(t_data *data)
 {
 	data->win.mlx = mlx_init();
-	data->win.display = CGMainDisplayID();
 	data->win.win_h = 0;
 	data->win.win_w = 0;
-	data->win.win_h = CGDisplayPixelsHigh(data->win.display);
-	data->win.win_w = CGDisplayPixelsWide(data->win.display);
+	data->win.win_h = 1080;
+	data->win.win_w = 1920;
 	if (data->win.win_w > 0 && data->win.win_h > 0)
 	{
 		data->win.margin_w = (data->win.win_w - 960) / 2;

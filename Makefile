@@ -1,6 +1,6 @@
 NAME = cub3D
 
-CC = gcc
+CC = gcc-12
 
 CFLAGS = -Wextra -Werror -Wall
 LDFLAGS = -Llibft -L$(HOME) -Lmlx -lmlx -framework OpenGL -framework Appkit

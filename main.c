@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 10:45:29 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/17 17:37:52 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/19 14:06:24 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	main(int argc, char **argv)
 	ft_init_map(&data);
 	ft_get_image(&data);
 	mlx_hook(data.win.mlx_win, 2, 0, ft_key_press, &data);
-	mlx_hook(data.win.mlx_win, 3, 0, ft_key_release, &data);	
+	mlx_hook(data.win.mlx_win, 3, 0, ft_key_release, &data);
 	mlx_hook(data.win.mlx_win, 17, 1L << 0, ft_close, &data);
 	mlx_loop_hook(data.win.mlx, ft_events_loop, &data);
 	mlx_loop(data.win.mlx);

@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 08:58:25 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/17 17:51:48 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/19 14:03:18 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ float	ft_fix_fisheye(float angle)
 		angle += 6.2831853071;
 	if (angle > 6.2831853071)
 		angle -= 6.2831853071;
-	return (cos(angle));	
+	return (cos(angle));
 }
 
 void	ft_draw_v_line(t_image *image, t_ray *ray, int color)

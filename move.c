@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 08:48:40 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/17 13:39:08 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/19 13:53:53 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ft_collision_check(t_map *map, t_grid *grid, char k)
 void	ft_a_move(t_data *data, t_map *map)
 {
 	t_grid	g;
-	
+
 	map->a_rad += 1.57079632679;
 	if (map->a_rad > 6.2831853071)
 		map->a_rad -= 6.2831853071;
@@ -65,7 +65,7 @@ void	ft_a_move(t_data *data, t_map *map)
 void	ft_d_move(t_data *data, t_map *map)
 {
 	t_grid	g;
-	
+
 	map->a_rad -= 1.57079632679;
 	if (map->a_rad < 0)
 		map->a_rad += 6.2831853071;

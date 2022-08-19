@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 08:45:55 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/17 14:00:22 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/19 13:52:12 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,5 @@ void	ft_new_fov(t_image *maping, t_map *map)
 
 void	ft_get_image(t_data *data)
 {
-	//ft_new_pos(&data->maping, &data->map, 0x00ffff00);
 	ft_raycasting(data);
-	//ft_new_fov(&data->maping, &data->map);
 }

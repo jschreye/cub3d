@@ -6,7 +6,7 @@
 /*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 14:29:31 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/17 18:22:49 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/19 14:45:10 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_get_map_size(int width, int height)
 	int	size1;
 	int	size2;
 
-	max_w = (960 / 2) - (2 * 5);
+	max_w = 960;
 	max_h = 120 - (2 * 5);
 	size1 = max_w / width;
 	size2 = max_h / height;
