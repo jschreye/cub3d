@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_map.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: grubin <grubin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/15 14:29:31 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/19 14:45:10 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/22 11:23:16 by grubin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_get_map_size(int width, int height)
 	int	size2;
 
 	max_w = 960;
-	max_h = 120 - (2 * 5);
+	max_h = 120;
 	size1 = max_w / width;
 	size2 = max_h / height;
 	if (size1 > size2)

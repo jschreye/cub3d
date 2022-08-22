@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jschreye <jschreye@student.42.fr>          +#+  +:+       +#+        */
+/*   By: grubin <grubin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 10:45:29 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/19 14:06:24 by jschreye         ###   ########.fr       */
+/*   Updated: 2022/08/22 10:00:29 by grubin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	main(int argc, char **argv)
 	data.pars.fd = open(argv[1], O_RDONLY);
 	ft_check_cub(&data);
 	close(data.pars.fd);
+	ft_new_map(&data);
 	ft_init_struct_win(&data);
 	ft_init_world(&data);
 	ft_init_texture(&data);

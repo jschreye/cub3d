@@ -1,6 +1,6 @@
 NAME = cub3D
 
-CC = gcc-12
+CC = gcc
 
 CFLAGS = -Wextra -Werror -Wall
 LDFLAGS = -Llibft -L$(HOME) -Lmlx -lmlx -framework OpenGL -framework Appkit
@@ -39,6 +39,7 @@ SRCS =  main.c \
 		texture_bis.c \
 		check_key.c \
 		events_loop.c \
+		new_map.c \
 		
 OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.c=.o)))
 
