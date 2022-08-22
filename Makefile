@@ -1,6 +1,6 @@
 NAME = cub3D
 
-CC = gcc
+CC = gcc-12
 
 CFLAGS = -Wextra -Werror -Wall
 LDFLAGS = -Llibft -L$(HOME) -Lmlx -lmlx -framework OpenGL -framework Appkit
@@ -66,7 +66,7 @@ $(OBJS_DIR):
 $(OBJS_DIR)/%.o : %.c | $(OBJS_DIR)
 	$(CC) $(CFLAGS) $(INC_DIRS) -o $@ -c $^
 
-debug: CFLAGS += -g3 -fsanitize=address -fno-omit-frame-pointer
+debug: CFLAGS += -g3 -fsanitize=address
 debug: LDFLAGS += -fsanitize=address
 debug: $(LIBFT) $(OBJS) $(NAME)
 

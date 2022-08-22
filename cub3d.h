@@ -6,7 +6,7 @@
 /*   By: grubin <grubin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 14:54:25 by jschreye          #+#    #+#             */
-/*   Updated: 2022/08/22 09:59:48 by grubin           ###   ########.fr       */
+/*   Updated: 2022/08/22 11:35:59 by jschreye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -237,7 +237,7 @@ void			ft_check_char_map(t_data *data);
 void			ft_check_border(t_data *data);
 void			ft_check_p(t_data *data);
 void			ft_check_size_map(t_data *data);
-void ft_new_map(t_data *data);
+void			ft_new_map(t_data *data);
 
 //utils
 void			ft_free_tab(char **tab);
